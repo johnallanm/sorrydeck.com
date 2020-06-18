@@ -1,0 +1,99 @@
+﻿<!--
+    INTRO
+    This is the source for SorryDeck.com, which provides a virtual card deck for Hasbro's well-loved
+    Sorry!(r) game. It is designed to be accessed on a mobile phone that is placed on the middle of the
+    board game where both parents and kids can see it and take turns touching the screen, drawing the
+    next card.
+
+    Buy your own game here:
+    https://shop.hasbro.com/en-us/product/sorry-2013-edition-game:590E1934-5056-9047-F59F-9F4E9B948900
+
+    LICENSE AND TRADEMARK
+    Sorry! is a registered trademark of Hasbro, Inc.  The basic card design is copyright by Hasbro. Because
+    I am not creating a full virtual game and this virtual deck can ONLY be used by people who buy a game from
+    Hasbro, including a copy of the paper deck, I believe this qualifies as fair use. I have no intent to
+    complete with Hasbro. If they provide their own Sorry! deck that works well for the iPhone, even if it
+    costs a couple of dollar, I will change this site to point to their app.
+
+    All other copyrights are by Infinite Stairway LLC 2020. Released under the MIT license on June 18, 2020.
+
+    CONTRIBUTIONS
+    Submissions are welcome! https://github.com/johnallanm/sorrydeck.com
+
+    HISTORY
+    I run my own software company, Infinite Stairway LLC. Because of the social distancing required by
+    covid-19, I started spending more time with my kids, especially playing board games (the silver lining
+    of the clouds). This game is a family favorite. Even my wife likes it. We sometimes play it on dates. When
+    she was in the labor and delivery room for our third baby, I entertained her by buying a special
+    edition of Sorry! and playing it with her to keep her mind from the long delivery. In fact, I was
+    holding that baby when our family placed Sorry! for the first time using SorryDeck.com--on the same
+    day our baby took her first steps!
+
+    I love this game, but after I read in the NYT that it takes a minimum of 7 shuffles to get a truly
+    random order, and being a stickler for fairness, shuffling started to take a long time. (See
+    https://www.nytimes.com/1990/01/09/science/in-shuffling-cards-7-is-winning-number.html.) One day when
+    playing with my five-year-old, inspiration struck me. I made her wait 10 minutes--which she thought was
+    forever--while I created a C# Windows Forms game. It worked, but she didn't like it. Two iterations
+    later I came up with this, which she thinks is cool.
+
+    Enjoy! And spend some time with your kids!
+    - John Allan Miller, June 18, 2020
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sorry!® Deck</title>
+    <!-- IMPORTANT! Be sure to update the version numbers below when changing the CSS/JS. -->
+    <link rel="stylesheet" href="sorry.css?v=6">
+    <script src="sorry.js?v=6" type="text/javascript" defer="defer"></script>
+</head>
+<body>
+    <!-- This implements three card faces:
+        1. The back side (which is green)
+        2. The number card
+        3. The Sorry!(r) card, which is formatted differently from the number card.
+
+        JavaScript is used to switch between the cards and to set the number and instructions on the number card.
+
+        The star background in the center of the cards is implemented using three squares--one normal
+        one, one that is rotated 120 degrees, and another that is rotated 240 degrees.
+     -->
+    <div id="backcard" class="card">
+        <div id="backcardsorrytext" class="backcardtext">SORRY!</div>
+        <div id="backcardtrademark" class="backcardtext">®</div>
+    </div>
+    <div id="numbercard" class="card">
+        <div id="topnumber" class="cornernumber">3</div>
+        <div id="topnumberinstruction" class="numberinstruction">Move forward 3.</div>
+        <div id="middlenumber">3</div>
+        <div id="bottomnumberinstruction" class="numberinstruction">Move forward 3</div>
+        <div id="bottomnumber" class="cornernumber">3</div>
+
+        <div id="starbackground1" class="starbackground">&nbsp;</div>
+        <div id="starbackground2" class="starbackground">&nbsp;</div>
+        <div id="starbackground3" class="starbackground">&nbsp;</div>
+    </div>
+    <div id="sorrycard" class="card">
+        <div id="topsorrycardtext" class="sorrycardtext">SORRY!</div>
+        <div id="topsorrycardinstructions" class="sorrycardinstructions">
+            Move from Start and<br />
+            switch places <br />
+            with an opponent,<br />
+            who you bump<br />
+            back to Start.
+        </div>
+        <div id="starbackground1" class="starbackground">&nbsp;</div>
+        <div id="starbackground2" class="starbackground">&nbsp;</div>
+        <div id="starbackground3" class="starbackground">&nbsp;</div>
+        <div id="bottomsorrycardinstructions" class="sorrycardinstructions">
+            Move from Start and<br />
+            switch places <br />
+            with an opponent,<br />
+            who you bump<br />
+            back to Start.
+        </div>
+        <div id="bottomsorrycardtext" class="sorrycardtext">SORRY!</div>
+    </div>
+</body>
+</html>

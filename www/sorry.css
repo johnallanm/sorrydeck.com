@@ -1,0 +1,210 @@
+﻿/*  Since each page only contains a card, the card is automatically sized to fit the screen. All sizes are relative
+    to the size of the page, including font sizes. Unfortunately Safari on the iPhone defines vh as the height when
+    the address bar is hidden but it always shows the address bar for this page. This caused scrolling. To
+    work around that issue, this instead uses a css variable named "--vh" that is set by JavaScript.
+
+    This is not tested or built to work in Internet Explorer.
+*/
+
+/*******************************************************
+General
+********************************************************/
+
+body {
+    background-color: black;
+}
+
+.card {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border-radius: 5%;
+    top: calc(var(--vh) * 10);
+    left: calc(50% - (50 * var(--vh) / 2));
+    height: calc(80 * var(--vh));
+    width: calc(50 * var(--vh));
+    margin: 0 auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.starbackground {
+    position: absolute;
+    z-index: 2;
+    background-color: #EEE;
+    top: calc(50% - (23 * var(--vh) / 2));
+    left: calc(50% - (23 * var(--vh) / 2));
+    height: calc(23 * var(--vh));
+    width: calc(23 * var(--vh));
+}
+
+#starbackground1 {
+    transform: rotate(120deg);
+}
+
+#starbackground2 {
+    transform: rotate(240deg);
+}
+
+#starbackground3 {
+}
+
+/*******************************************************
+Back Card
+********************************************************/
+#backcard {
+    background-color: #21b04d;
+}
+
+.backcardtext {
+    position: absolute;
+    z-index: 2;
+    transform: rotate(90deg);
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+#backcardsorrytext {
+    font-weight: 600;
+    font-size: calc(15 * var(--vh));
+    top: calc(27.5 * var(--vh));
+    width: 100%;
+}
+
+#backcardtrademark {
+    font-weight: 600;
+    font-size: calc(3 * var(--vh));
+    left: calc(50% + (3.5 * var(--vh)));
+    top: calc(68.5 * var(--vh));
+}
+
+/********************************************************/
+/* Number Card                                          */
+
+#numbercard {
+    display: none;
+}
+
+.cornernumber {
+    font-family: 'Times New Roman';
+    font-size: calc(9 * var(--vh));
+    font-weight: 700;
+}
+
+.numberinstruction {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: calc(2.9 * var(--vh));
+    width: 100%;
+}
+
+.numberinstruction1line {
+    padding-top: calc(2.2 * var(--vh));
+    padding-bottom: calc(2 * var(--vh));
+}
+
+.numberinstruction2lines {
+    padding-top: calc(1 * var(--vh));
+    padding-bottom: calc(1 * var(--vh));
+}
+
+.numberinstruction3lines {
+}
+
+.boldnumberinstruction
+{
+    font-weight: 700;
+}
+
+#topnumber {
+    position: absolute;
+    z-index: 3;
+    top: calc(5 * var(--vh));
+    left: calc(50% - 20 * var(--vh));
+}
+
+#topnumberinstruction {
+    position: absolute;
+    z-index: 3;
+    top: calc(13.5 * var(--vh));
+}
+
+#middlenumber {
+    position: absolute;
+    z-index: 3;
+    font-family: 'Times New Roman';
+    font-weight: 900;
+    font-size: calc(25 * var(--vh));
+    text-align: center;
+    top: calc(25 * var(--vh));
+    left: 0px;
+    height: calc(20 * var(--vh));
+    width: 100%;
+}
+
+#bottomnumberinstruction {
+    position: absolute;
+    z-index: 3;
+    top: calc(57.6 * var(--vh));
+    transform: rotate(-180deg);
+}
+
+#bottomnumber {
+    position: absolute;
+    z-index: 3;
+    top: calc(65 * var(--vh));
+    left: 0;
+    width: calc(50% + 20 * var(--vh));
+    transform: rotate(-180deg);
+    text-align: left;
+}
+
+
+/*******************************************************
+Sorry Card
+********************************************************/
+
+#sorrycard {
+    display: none;
+}
+
+.sorrycardtext {
+    font-weight: 900;
+    font-family: Helvetica, sans-serif;
+    font-size: calc(10 * var(--vh));
+    text-align: center;
+    width: 100%;
+}
+
+.sorrycardinstructions {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: calc(2.9 * var(--vh));
+    width: 100%;
+}
+
+#topsorrycardtext {
+    position: absolute;
+    z-index: 3;
+    top: calc(5 * var(--vh));
+}
+
+#topsorrycardinstructions {
+    position: absolute;
+    z-index: 3;
+    top: calc(16 * var(--vh));
+}
+
+#bottomsorrycardinstructions {
+    position: absolute;
+    z-index: 3;
+    top: calc(48 * var(--vh));
+    transform: rotate(-180deg);
+}
+
+#bottomsorrycardtext {
+    position: absolute;
+    z-index: 3;
+    top: calc(65 * var(--vh));
+    transform: rotate(-180deg);
+}
