@@ -46,7 +46,7 @@ function hideCard() {
 }
 
 function showNextCard() {
-    // This funtion assumes the previous card has already been hdiden.
+    // This function assumes the previous card has already been hdiden.
     if (deck.length == 0)
         shuffleDeck();
 
@@ -82,23 +82,23 @@ function showNextCard() {
 }
 
 function shuffleDeck() {
-    addCardToDesk("Sorry", [], 4);
-    addCardToDesk("1", ["Move from Start", "or move forward 1."], 5);
-    addCardToDesk("2", ["Move from Start", "or more forward 2.", "<span class=\"boldnumberinstruction\">DRAW AGAIN.</span></b>"], 4);
-    addCardToDesk("3", ["Move forward 3."], 4);
-    addCardToDesk("4", ["Move backward 4."], 4);
-    addCardToDesk("5", ["Move forward 5."], 4);
-    addCardToDesk("7", ["Move forward 7", "or split between", "two pawns."], 4);
-    addCardToDesk("8", ["Move forward 8."], 4);
-    addCardToDesk("10", ["Move forward 10", "or backward 1."], 4);
-    addCardToDesk("11", ["Move forward 11", "or change places", "with an opponent."], 4);
-    addCardToDesk("12", ["Move forward 12."], 4);
+    addCardToDeck("Sorry", [], 4);
+    addCardToDeck("1", ["Move from Start", "or move forward 1."], 5);
+    addCardToDeck("2", ["Move from Start", "or more forward 2.", "<span class=\"boldnumberinstruction\">DRAW AGAIN.</span></b>"], 4);
+    addCardToDeck("3", ["Move forward 3."], 4);
+    addCardToDeck("4", ["Move backward 4."], 4);
+    addCardToDeck("5", ["Move forward 5."], 4);
+    addCardToDeck("7", ["Move forward 7", "or split between", "two pawns."], 4);
+    addCardToDeck("8", ["Move forward 8."], 4);
+    addCardToDeck("10", ["Move forward 10", "or backward 1."], 4);
+    addCardToDeck("11", ["Move forward 11", "or change places", "with an opponent."], 4);
+    addCardToDeck("12", ["Move forward 12."], 4);
 
     if (!isDisplayTest())
         deck.sort((a, b) => (a.randomorder > b.randomorder) ? 1 : -1)
 }
 
-function addCardToDesk(name, instructions, count) {
+function addCardToDeck(name, instructions, count) {
     if (isDisplayTest())
         count = 1;
 
