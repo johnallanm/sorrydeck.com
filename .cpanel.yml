@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -TR www/* /home/sorrydec/public_html/
+    - /bin/cp -TR www/ /home/sorrydec/public_html/
